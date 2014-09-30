@@ -30,12 +30,16 @@ $(document).on('ready', function() {
 	});
 
 	//take all author names and show in new link
-	$(document).on('click', authorInput, function() {
+	$(document).on('click', newQuoteBox, function() {
 		var arrAuthor = [];
 		
-		if(authorInput.text() === authorInput.text()) {
-			arrAuthor.push(authorInput[i]);
+		var specificAuthors = function(author) {
+			if(authorInput.text() === authorInput.text()) {
+				arrAuthor.push(authorInput[i]);
+				console.log(authorInput);
+			}
 		}
+		return newQuoteBox.filter(specificAuthors());
 	})
 });
 
