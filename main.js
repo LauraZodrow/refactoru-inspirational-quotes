@@ -4,8 +4,21 @@ $(document).on('ready', function() {
 	$('form').hide();
 
 	$('.quoteButton').on('click', function() {
+		$(this).show('form').slideDown('slow');
 		$('form').toggle();
+
+
+		$('.quoteText').focus(function() {
+			 $(this).text(' ');
+		})
+
+		$('.authorText').focus(function() {
+			var textShow = $(this).text(' ');
+			var textEmpty = textShow.text(' ');
+			return textEmpty;
+		})
 	});
+
 
 	$('.buttonSubmit').on('click', function(e) {
 		var newQuoteBox = $('.quoteBox').first().clone();
@@ -20,7 +33,7 @@ $(document).on('ready', function() {
 		newQuoteBox.append('Author: ' + authorInput);
 
 		$('.quoteBox').last().after(newQuoteBox);
-		// $('.quoteBox').last().after(newDeleteButton);
+		$('.quoteBox').last().after(newDeleteButton);
 
 		e.preventDefault();
 	});
@@ -30,17 +43,17 @@ $(document).on('ready', function() {
 	});
 
 	//take all author names and show in new link
-	$(document).on('click', newQuoteBox, function() {
-		var arrAuthor = [];
+	// $(document).on('click', newQuoteBox, function() {
+	// 	var arrAuthor = [];
 		
-		var specificAuthors = function(author) {
-			if(authorInput.text() === authorInput.text()) {
-				arrAuthor.push(authorInput[i]);
-				console.log(authorInput);
-			}
-		}
-		return newQuoteBox.filter(specificAuthors());
-	})
+	// 	var specificAuthors = function(author) {
+	// 		if(authorInput.text() === authorInput.text()) {
+	// 			arrAuthor.push(authorInput[i]);
+	// 			console.log(authorInput);
+	// 		}
+	// 	}
+	// 	return newQuoteBox.filter(specificAuthors());
+	// })
 });
 
 //all quotes then filter out author name where .text() === . text(). hide rest of quotes show only .text 
