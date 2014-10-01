@@ -42,6 +42,8 @@ $(document).on('ready', function() {
 		$(this).parent('.quoteBox').hide();	
 	});
 
+	var starImage = $("img src='star-white.png");
+
 	//take all author names and show in new link
 	// $(document).on('click', newQuoteBox, function() {
 	// 	var arrAuthor = [];
