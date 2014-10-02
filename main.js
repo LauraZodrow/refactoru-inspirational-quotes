@@ -43,6 +43,7 @@ $(document).on('ready', function() {
 	});
 
 	var starImage = $("img src='star-white.png");
+	$('quoteBox').append(starImage);
 
 	//take all author names and show in new link
 	// $(document).on('click', newQuoteBox, function() {
